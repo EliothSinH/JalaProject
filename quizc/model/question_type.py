@@ -14,7 +14,8 @@ class QuestionConfiguration(object):
 
 class TextConfiguration(QuestionConfiguration):
     def __init__(self):
-        QuestionConfiguration.__init__(self, False, [ValidatorType.REQUIRED, ValidatorType.MIN_LENGTH])
+        QuestionConfiguration.__init__(self, False, [ValidatorType.REQUIRED, ValidatorType.MIN_LENGTH,
+                                                     ValidatorType.MAX_LENGTH, ValidatorType.ONLY_UPPERCASE])
 
 
 class DateConfiguration(QuestionConfiguration):
@@ -38,7 +39,7 @@ class PickOneQuestionConfiguration(QuestionConfiguration):
 
 class NumericConfiguration(QuestionConfiguration):
     def __init__(self):
-        QuestionConfiguration.__init__(self, False, [ValidatorType.REQUIRED, ValidatorType.MIN])
+        QuestionConfiguration.__init__(self, False, [ValidatorType.REQUIRED, ValidatorType.MIN, ValidatorType.MAX])
 
     def convert_value(self, value):
         try:

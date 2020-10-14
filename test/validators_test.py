@@ -10,7 +10,7 @@ class UtilsTest(unittest.TestCase):
 
     def test_factory_returns_required_validator(self):
         required_validator = ValidatorType.get_validator(ValidatorType.REQUIRED.code)
-        self.assertTrue(isinstance(required_validator, DateValidator), "The factory returned a wrong validator instance")
+        self.assertTrue(isinstance(required_validator, RequiredValidator), "The factory returned a wrong validator instance")
 
     def test_valid_date_validator(self):
         error = []

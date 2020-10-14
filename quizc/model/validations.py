@@ -16,7 +16,7 @@ class DateValidator(object):
 
     def validate(self, value, condition_value, errors):
         try:
-            datetime.datetime.strptime(value, '%d/%m/%Y')
+            datetime.datetime.strptime(value, self.DATE_FORMAT)
         except ValueError:
             errors.append(self.MESSAGE)
 
